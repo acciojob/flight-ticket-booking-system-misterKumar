@@ -37,6 +37,11 @@ public class FlightBookingController {
 	    @PostMapping("/book")
 	    public ResponseEntity<String> bookFlight(@RequestBody FlightBooking booking) {
 	    	// your code goes here
-	        return ResponseEntity.ok("Booking successful");
+			try {
+				flightBookingService.bookFlight(booking);
+				return ResponseEntity.ok("Booking successful");
+			} catch (IllegalArgumentException e) {
+				return ResponseEntity.badRequest().body(e.getMessage());
+			}
 	    }
 }

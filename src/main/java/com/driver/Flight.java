@@ -15,6 +15,13 @@ public class Flight {
 
 	    public Flight(int id, String flightNumber, String origin, String destination, double price, int capacity, int availableSeats) {
 	    	// your code goes here
+			this.id = id;
+			this.flightNumber = flightNumber;
+			this.origin = origin;
+			this.destination = destination;
+			this.price = price;
+			this.capacity = capacity;
+			this.availableSeats = availableSeats;
 	    }
 
 	    // Getters and Setters
@@ -36,6 +43,7 @@ public class Flight {
 
 	    public void setFlightNumber(String flightNumber) {
 	    	// your code goes here
+			this.flightNumber = flightNumber;
 	    }
 
 	    public String getOrigin() {
@@ -45,6 +53,7 @@ public class Flight {
 
 	    public void setOrigin(String origin) {
 	    	// your code goes here
+			this.origin = origin;
 	    }
 
 	    public String getDestination() {
@@ -54,6 +63,7 @@ public class Flight {
 
 	    public void setDestination(String destination) {
 	    	// your code goes here
+			this.destination = destination;
 	    }
 
 	    public double getPrice() {
@@ -63,6 +73,7 @@ public class Flight {
 
 	    public void setPrice(double price) {
 	    	// your code goes here
+			this.price=price;
 	    }
 
 	    public int getCapacity() {
@@ -72,6 +83,7 @@ public class Flight {
 
 	    public void setCapacity(int capacity) {
 	    	// your code goes here
+			this.capacity=capacity;
 	    }
 
 	    public int getAvailableSeats() {
@@ -81,6 +93,7 @@ public class Flight {
 
 	    public void setAvailableSeats(int availableSeats) {
 	    	// your code goes here
+			this.availableSeats=availableSeats;
 	    }
 
 }

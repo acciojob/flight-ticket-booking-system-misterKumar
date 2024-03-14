@@ -25,5 +25,6 @@ public class FlightBookingServiceImpl implements FlightBookingService {
 	    @Override
 	    public void bookFlight(FlightBooking booking) {
 	    	// your code goes here
+			flightRepository.bookFlight(booking);
 	    }
 }

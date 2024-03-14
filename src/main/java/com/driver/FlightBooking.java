@@ -12,6 +12,10 @@ public class FlightBooking {
 
     public FlightBooking(int id, Flight flight, String passengerName, int numTickets) {
     	// your code goes here
+        this.id = id;
+        this.flight = flight;
+        this.passengerName = passengerName;
+        this.numTickets = numTickets;
     }
 
     // Getters and Setters
@@ -23,6 +27,7 @@ public class FlightBooking {
 
     public void setId(int id) {
     	// your code goes here
+        this.id=id;
     }
 
     public Flight getFlight() {
@@ -32,6 +37,7 @@ public class FlightBooking {
 
     public void setFlight(Flight flight) {
     	// your code goes here
+        this.flight=flight;
     }
 
     public String getPassengerName() {
@@ -41,6 +47,7 @@ public class FlightBooking {
 
     public void setPassengerName(String passengerName) {
     	// your code goes here
+        this.passengerName=passengerName;
     }
 
     public int getNumTickets() {
@@ -50,6 +57,7 @@ public class FlightBooking {
 
     public void setNumTickets(int numTickets) {
     	// your code goes here
+        this.numTickets=numTickets;
     }
 
 }

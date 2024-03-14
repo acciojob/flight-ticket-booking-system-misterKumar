@@ -13,12 +13,19 @@ public class InMemoryFlightRepository implements FlightRepository {
 
 	    public InMemoryFlightRepository() {
 	    	// your code goes here
+			flights=new HashMap<>();
+			bookings=new HashMap<>();
 	    }
 
 	    @Override
 	    public List<Flight> searchFlights(String origin, String destination) {
 	        List<Flight> result = new ArrayList<>();
 	        // your code goes here
+			for (Flight flight : flights.values()) {
+				if (flight.getOrigin().equalsIgnoreCase(origin) && flight.getDestination().equalsIgnoreCase(destination)) {
+					result.add(flight);
+				}
+			}
 	        return result;
 	    }
 
@@ -31,5 +38,17 @@ public class InMemoryFlightRepository implements FlightRepository {
 	    @Override
 	    public void bookFlight(FlightBooking booking) {
 	    	// your code goes here
+			Flight flight = booking.getFlight();
+			int numTickets = booking.getNumTickets();
+			int availableSeats = flight.getAvailableSeats();
+			if (numTickets <= availableSeats) {
+				// Update available seats
+				flight.setAvailableSeats(availableSeats - numTickets);
+				// Generate booking ID and add booking to repository
+				booking.setId(++bookingId);
+				bookings.put(bookingId, booking);
+			} else {
+				throw new IllegalArgumentException("Not enough available seats for booking");
+			}
 	    }
 }
